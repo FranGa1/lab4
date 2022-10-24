@@ -1,6 +1,7 @@
 <h1 class="h1">Monstruos</h1>
+<hr>
 <div class="d-flex justify-content-end">
-    <button class="btn border boder-data border-2"><%= link_to "Agregar monstruo", "/monsters/new"%></button>
+    <button class="btn border boder-data border-2" style="font-size:1rem"><%= link_to "Agregar monstruo", "/monsters/new"%></button>
 </div>
 
 <%t = Tweet.all%>
@@ -14,8 +15,8 @@
         </tr>
         <%-@monsters.each do |m|-%>
             <tr>
-                <td><%= m.id %></td>
-                <td><button class="btn" style="font-size:1em"><%= link_to m.name, m%></button></td>
+                <td  style="font-size:1rem"><%= m.id %></td>
+                <td><button class="btn" style="font-size:1rem"><%= link_to m.name, m%></button></td>
                 <td>
                     <% if t.where(monster_id:m.id).count > 1%>
                         <span class="badge bg-info text-wrap" style="font-family:'Verdana'">Twittero destacado</span>
