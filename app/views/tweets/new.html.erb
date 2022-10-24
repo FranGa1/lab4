@@ -1,3 +1,6 @@
 <h2 class="py-2 mb-0">Nuevo Tweet</h2>
 
+<% if @monster != nil %>
+  <div class="alert alert-info"><%=@monster.name.underscore%> no tiene ningún Tweet ¡Agrega el primero!</div>
+<% end %>
 <%= render "form", tweet: @tweet, monster: @monster %>

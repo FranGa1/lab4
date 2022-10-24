@@ -11,7 +11,6 @@ class TweetsController < ApplicationController
     monster_id = params[:id]
     if (monster_id != nil)
       @monster = Monster.find_by(id:monster_id)
-      puts(@monster.name)
     end
     @tweet = Tweet.new
   end
