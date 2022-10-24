@@ -31,10 +31,6 @@ class MonstersController < ApplicationController
 
   def destroy
     @monster = Monster.find(params[:id])
-    monster_tweets = Tweet.where(monster_id: @monster.id)
-    if (monster_tweets.count > 0)
-      monster_tweets.destroy_all
-    end
     @monster.destroy
     redirect_to monsters_path
   end

@@ -32,4 +32,9 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:content, :monster_id)
   end
+
+  def destroy_all
+    Tweet.delete_all
+    redirect_to :back
+  end
 end

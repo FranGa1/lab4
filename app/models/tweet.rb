@@ -1,3 +1,3 @@
 class Tweet < ApplicationRecord
-  belongs_to :monster,  dependent: :destroy
+  belongs_to :monster
 end
