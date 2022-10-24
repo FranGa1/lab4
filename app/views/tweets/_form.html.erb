@@ -1,5 +1,10 @@
 <%= form_with model: tweet do |f| %>
+
+  <% if (monster != nil) %>
+  <%= f.collection_select :monster_id, Monster.where(id:monster.id), :id, :name, {}, { class: "form-select mb-2" } %>
+  <%else%>
   <%= f.collection_select :monster_id, Monster.order(:name), :id, :name, {}, { class: "form-select mb-2" } %>
+  <% end %>
   <%= f.text_area :content, placeholder: "¿Qué está pasando?", class: "form-control mb-2" %>
 
   <%= f.submit "Twittear", class: "btn btn-primary mb-2" %>
